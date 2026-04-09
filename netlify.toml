@@ -1,0 +1,26 @@
+[build]
+  command = ""
+  publish = "."
+
+[[redirects]]
+  from = "/"
+  to = "/index.php"
+  status = 200
+
+[[redirects]]
+  from = "/tools"
+  to = "/tools/index.php"
+  status = 200
+
+[[redirects]]
+  from = "/tools/:page"
+  to = "/tools/:page.php"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/server/:splat"
+  status = 200
+
+[functions]
+  node_bundler = "esbuild"
